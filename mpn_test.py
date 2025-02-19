@@ -53,6 +53,7 @@ class MPN(nn.Module):
         return self.a2(self.linear(h))
     
     # evaluate network on sequence of inputs
+    # THIS IS WRONG im still trying to figure out how batches work with this
     def evaluate(self, x):
         y = torch.zeros_like(x, dtype=torch.float32)
 
@@ -100,5 +101,6 @@ for X, Y in dataLoader:
     if i == 0:
         print(X.shape, Y.shape)
         print(X[0])
+        print(Y[0])
     
     i += 1
